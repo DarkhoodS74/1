@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #fff;
     color: #000;
 }
@@ -29,6 +30,7 @@ body {
     background: url('IMG_1262.jpeg') no-repeat center center/cover;
     filter: blur(8px);
     z-index: -1;
+    opacity: 0.9;
 }
 
 /* Навігація */
@@ -51,32 +53,47 @@ header {
 
 .menu a {
     text-decoration: none;
-    color: #fff; /* Зміна кольору меню на білий */
+    color: #FFD700; /* Жовтий колір для меню */
     font-size: 20px;
+    font-weight: 600;
     text-transform: uppercase;
     transition: 0.3s;
 }
 
 .menu a:hover {
-    color: #FFD700;
+    color: #fff;
 }
 
 /* Текстова секція */
 .hero-text {
     max-width: 50%;
-    color: #000; /* Чорний текст */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5); /* Легка біла тінь */
+    color: #000;
+    text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.5); /* Легка біла тінь */
 }
 
 .hero-text h1 {
-    font-size: 60px;
+    font-size: 65px;
+    font-family: 'Raleway', sans-serif;
     font-weight: 700;
     margin: 0;
 }
 
 .hero-text p {
-    font-size: 24px;
+    font-size: 28px;
+    font-family: 'Raleway', sans-serif;
     font-weight: 300;
+}
+
+/* Декоративні елементи */
+.hero-text::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #FFD700;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-image img {
