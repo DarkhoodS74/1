@@ -34,8 +34,12 @@
         <section class="products">
             <div class="product">
                 <div class="carousel">
-                    <img src="IMG_1260.jpeg" alt="Товар 1" class="carousel-image">
-                    <img src="IMG_1261.jpeg" alt="Товар 1" class="carousel-image">
+                    <button class="carousel-button prev" onclick="prevSlide(0)">&#10094;</button>
+                    <div class="carousel-images">
+                        <img src="IMG_1260.jpeg" alt="Товар 1" class="carousel-image">
+                        <img src="IMG_1261.jpeg" alt="Товар 1" class="carousel-image">
+                    </div>
+                    <button class="carousel-button next" onclick="nextSlide(0)">&#10095;</button>
                 </div>
                 <h2>Книга «САМ СОБІ ТВОРЕЦЬ»</h2>
                 <p>Ціна: 600 грн.</p>
@@ -44,8 +48,12 @@
 
             <div class="product">
                 <div class="carousel">
-                    <img src="IMG_1260.jpeg" alt="Товар 2" class="carousel-image">
-                    <img src="IMG_1261.jpeg" alt="Товар 2" class="carousel-image">
+                    <button class="carousel-button prev" onclick="prevSlide(1)">&#10094;</button>
+                    <div class="carousel-images">
+                        <img src="IMG_1260.jpeg" alt="Товар 2" class="carousel-image">
+                        <img src="IMG_1261.jpeg" alt="Товар 2" class="carousel-image">
+                    </div>
+                    <button class="carousel-button next" onclick="nextSlide(1)">&#10095;</button>
                 </div>
                 <h2>Електронна Книга «САМ СОБІ ТВОРЕЦЬ»</h2>
                 <p>Ціна: 250 грн.</p>
@@ -56,16 +64,21 @@
 
     <script>
         // JS для каруселі
-        const carousels = document.querySelectorAll('.carousel');
-        carousels.forEach(carousel => {
-            let currentIndex = 0;
-            const images = carousel.querySelectorAll('.carousel-image');
-            setInterval(() => {
-                images[currentIndex].style.display = 'none';
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].style.display = 'block';
-            }, 3000); // Зміна картинки кожні 3 секунди
-        });
+        function prevSlide(index) {
+            const carouselImages = document.querySelectorAll(`.carousel-images:nth-of-type(${index + 1}) img`);
+            let currentIndex = [...carouselImages].findIndex(img => img.style.display !== 'none');
+            carouselImages[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+            carouselImages[currentIndex].style.display = 'block';
+        }
+
+        function nextSlide(index) {
+            const carouselImages = document.querySelectorAll(`.carousel-images:nth-of-type(${index + 1}) img`);
+            let currentIndex = [...carouselImages].findIndex(img => img.style.display !== 'none');
+            carouselImages[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex + 1) % carouselImages.length;
+            carouselImages[currentIndex].style.display = 'block';
+        }
 
         // JS для гамбургер-меню
         const menuIcon = document.getElementById('menu-icon');
