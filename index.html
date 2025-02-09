@@ -9,7 +9,8 @@
 <body>
     <header>
         <nav>
-            <ul class="menu">
+            <div class="menu-icon" id="menu-icon">&#9776;</div>
+            <ul class="menu" id="menu">
                 <li><a href="#">Головна</a></li>
                 <li><a href="#">Доставка</a></li>
                 <li><a href="#">Оплата</a></li>
@@ -25,9 +26,18 @@
                 <p>Ким би ти не був, будь краще!</p>
             </div>
             <div class="hero-image">
-                <img src="IMG_1260.jpeg" alt="Обкладинка книги">
+                <img src="IMG_1260.jpeg" alt="Обкладинка книги" class="book-image">
             </div>
         </section>
     </main>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const menu = document.getElementById('menu');
+
+        menuIcon.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
