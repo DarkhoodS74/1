@@ -21,17 +21,53 @@
 
     <main>
         <section class="hero">
-            <div class="hero-image">
-                <img src="IMG_1260.jpeg" alt="Обкладинка книги" class="book-image">
-            </div>
             <div class="hero-text">
                 <h1>САМ СОБІ ТВОРЕЦЬ</h1>
                 <p>Ким би ти не був, будь краще!</p>
+            </div>
+            <div class="hero-image">
+                <img src="IMG_1260.jpeg" alt="Обкладинка книги" class="book-image">
+            </div>
+        </section>
+
+        <!-- Блок товарів -->
+        <section class="products">
+            <div class="product">
+                <div class="carousel">
+                    <img src="IMG_1260.jpeg" alt="Товар 1" class="carousel-image">
+                    <img src="IMG_1261.jpeg" alt="Товар 1" class="carousel-image">
+                </div>
+                <h2>Книга «САМ СОБІ ТВОРЕЦЬ»</h2>
+                <p>Ціна: 600 грн.</p>
+                <button class="order-button">Замовити</button>
+            </div>
+
+            <div class="product">
+                <div class="carousel">
+                    <img src="IMG_1260.jpeg" alt="Товар 2" class="carousel-image">
+                    <img src="IMG_1261.jpeg" alt="Товар 2" class="carousel-image">
+                </div>
+                <h2>Електронна Книга «САМ СОБІ ТВОРЕЦЬ»</h2>
+                <p>Ціна: 250 грн.</p>
+                <button class="order-button">Замовити</button>
             </div>
         </section>
     </main>
 
     <script>
+        // JS для каруселі
+        const carousels = document.querySelectorAll('.carousel');
+        carousels.forEach(carousel => {
+            let currentIndex = 0;
+            const images = carousel.querySelectorAll('.carousel-image');
+            setInterval(() => {
+                images[currentIndex].style.display = 'none';
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].style.display = 'block';
+            }, 3000); // Зміна картинки кожні 3 секунди
+        });
+
+        // JS для гамбургер-меню
         const menuIcon = document.getElementById('menu-icon');
         const menu = document.getElementById('menu');
 
