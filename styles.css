@@ -1,39 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #fff;
-    color: #000;
-}
-
-/* Фонова секція */
-.hero {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding: 50px;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('IMG_1268.png') no-repeat center center/cover;
-    filter: blur(8px);
-    z-index: -1;
-    opacity: 0.6; /* Напівпрозорий білий градієнт */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
-}
-
 /* Навігація */
 header {
     background: rgba(0, 0, 0, 0.8);
@@ -47,10 +11,11 @@ header {
     margin: 0;
     display: flex;
     justify-content: center;
+    gap: 40px; /* Додає рівномірні відступи між пунктами */
 }
 
 .menu li {
-    margin: 0 20px;
+    margin: 0;
 }
 
 .menu a {
@@ -60,6 +25,7 @@ header {
     font-weight: 600;
     text-transform: uppercase;
     transition: 0.3s;
+    padding: 10px 20px; /* Додає відступи всередині кнопок */
 }
 
 .menu a:hover {
@@ -75,98 +41,20 @@ header {
     margin-right: 20px;
 }
 
-.menu.show {
-    display: block;
-}
-
-.menu li {
-    display: inline-block;
-    margin: 10px 0;
-}
-
-.hero-text {
-    max-width: 50%;
-    color: #000;
-    text-shadow: 5px 5px 15px rgba(255, 255, 255, 0.8); /* Біла тінь з більш виразним ефектом */
-    text-align: center;
-}
-
-.hero-text h1 {
-    font-size: 65px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    margin: 0;
-}
-
-.hero-text p {
-    font-size: 28px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-}
-
-.hero-text::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background-color: #FFD700;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* Картинка з книгою */
-.book-image {
-    max-width: 400px;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
-    border: 5px solid #555555; /* Темно сіра рамка навколо титульного зображення */
-}
-
-/* Мобільна адаптивність */
+/* Мобільна версія */
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 20px;
-    }
-
-    .hero-text {
-        max-width: 100%;
-        text-align: center;
-        margin-top: 30px;
-    }
-
-    .hero-image {
-        margin-top: 20px;
-    }
-
     .menu {
         display: none;
         flex-direction: column;
         text-align: center;
+        gap: 15px; /* Менші відступи для мобільної версії */
     }
 
     .menu.show {
         display: flex;
     }
 
-    .menu li {
-        margin: 10px 0;
-    }
-
     .menu-icon {
         display: block;
-    }
-
-    .hero-text h1 {
-        font-size: 50px;
-    }
-
-    .hero-text p {
-        font-size: 20px;
-    }
-
-    .hero-image {
-        order: -1; /* Титульне зображення зліва */
     }
 }
