@@ -13,7 +13,7 @@ body {
 .hero {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     padding: 50px;
@@ -30,7 +30,8 @@ body {
     background: url('IMG_1268.png') no-repeat center center/cover;
     filter: blur(8px);
     z-index: -1;
-    opacity: 0.9;
+    opacity: 0.8;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
 }
 
 /* Навігація */
@@ -86,7 +87,8 @@ header {
 .hero-text {
     max-width: 50%;
     color: #000;
-    text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.5);
+    text-shadow: 5px 5px 15px rgba(255, 255, 255, 0.8); /* Біла тінь з більш виразним ефектом */
+    text-align: center;
 }
 
 .hero-text h1 {
@@ -117,22 +119,25 @@ header {
 .book-image {
     max-width: 400px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
-    border: 5px solid #FFD700; /* Рамка навколо титульного зображення */
+    border: 5px solid #555555; /* Темно сіра рамка навколо титульного зображення */
 }
 
 /* Мобільна адаптивність */
 @media (max-width: 768px) {
     .hero {
         flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px;
     }
 
     .hero-text {
         max-width: 100%;
         text-align: center;
+        margin-top: 30px;
     }
 
     .hero-image {
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
     .menu {
