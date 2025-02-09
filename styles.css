@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #000;
+}
+
 /* Фонова секція */
 .hero {
     position: relative;
@@ -19,4 +30,122 @@
     background: url('IMG_1268.png') no-repeat center center/cover;
     filter: blur(8px); /* Тільки розмиття, без білої заливки */
     z-index: -1;
+}
+
+/* Навігація */
+header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    text-align: center;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Виправлені відступи між пунктами меню */
+}
+
+.menu li {
+    margin: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #FFD700;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.3s;
+    padding: 10px 20px;
+}
+
+.menu a:hover {
+    color: #fff;
+}
+
+/* Гамбургер меню */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: #FFD700;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* Контейнер для контенту */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Картинка з книгою */
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.book-image {
+    max-width: 400px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+    border: 5px solid #555555; /* Темно-сіра рамка навколо титульного зображення */
+}
+
+/* Текст */
+.hero-text {
+    flex: 1;
+    color: #000;
+    text-shadow: 5px 5px 15px rgba(255, 255, 255, 0.8);
+}
+
+.hero-text h1 {
+    font-size: 65px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 28px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}
+
+/* Мобільна адаптивність */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-image {
+        order: -1; /* Титульне зображення зліва */
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
 }
