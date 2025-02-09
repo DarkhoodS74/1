@@ -110,6 +110,59 @@ header {
     border: 5px solid #555555; /* Темно сіра рамка */
 }
 
+/* Блок товарів */
+.products {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 20px;
+}
+
+.product {
+    width: 45%; /* Задаємо ширину товарів */
+    text-align: center;
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.carousel-image {
+    width: 100%;
+    display: none; /* Початково приховуємо всі картинки */
+}
+
+.carousel-image:first-child {
+    display: block; /* Показуємо першу картинку */
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.order-button {
+    padding: 10px 20px;
+    background-color: #FFD700;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.order-button:hover {
+    background-color: #ffcc00;
+}
+
 /* Мобільна адаптивність */
 @media (max-width: 768px) {
     .hero {
@@ -159,17 +212,14 @@ header {
         order: -1; /* Титульне зображення буде над текстом в мобільній версії */
         margin-bottom: 20px;
     }
-}
 
-/* ПК версія з гамбургер меню */
-@media (min-width: 769px) {
-    .menu-icon {
-        display: block; /* Покажемо гамбургер тільки на ПК */
+    /* Адаптивність для товарів */
+    .products {
+        flex-direction: column;
     }
 
-    .menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .product {
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
