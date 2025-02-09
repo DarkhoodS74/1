@@ -27,7 +27,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('IMG_1262.jpeg') no-repeat center center/cover;
+    background: url('IMG_1268.png') no-repeat center center/cover;
     filter: blur(8px);
     z-index: -1;
     opacity: 0.9;
@@ -44,16 +44,17 @@ header {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .menu li {
-    display: inline;
     margin: 0 20px;
 }
 
 .menu a {
     text-decoration: none;
-    color: #FFD700; /* Жовтий колір для меню */
+    color: #FFD700;
     font-size: 20px;
     font-weight: 600;
     text-transform: uppercase;
@@ -64,11 +65,28 @@ header {
     color: #fff;
 }
 
-/* Текстова секція */
+/* Гамбургер меню */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: #FFD700;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.menu.show {
+    display: block;
+}
+
+.menu li {
+    display: inline-block;
+    margin: 10px 0;
+}
+
 .hero-text {
     max-width: 50%;
     color: #000;
-    text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.5); /* Легка біла тінь */
+    text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.5);
 }
 
 .hero-text h1 {
@@ -84,7 +102,6 @@ header {
     font-weight: 300;
 }
 
-/* Декоративні елементи */
 .hero-text::after {
     content: '';
     position: absolute;
@@ -96,7 +113,51 @@ header {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
-.hero-image img {
+/* Картинка з книгою */
+.book-image {
     max-width: 400px;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+    border: 5px solid #FFD700; /* Рамка навколо титульного зображення */
+}
+
+/* Мобільна адаптивність */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .hero-text h1 {
+        font-size: 50px;
+    }
+
+    .hero-text p {
+        font-size: 20px;
+    }
 }
